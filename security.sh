@@ -19,7 +19,7 @@ function ctrl_c(){
 }
 
 function helpPanel(){
-	echo -e "\n${yellowColour}[*]${endColour}${grayColour} Uso: ./security.sh ${endColour}\n"
+	echo -e "\n${yellowColour}[*]${endColour}${grayColour} Uso: ./security${endColour}\n"
 	echo -e "${purpleColour}h) ${endColour}${yellowColour}Mostrar este panel de ayuda${endColour}\n"
 }
 function security(){
@@ -45,7 +45,7 @@ function security(){
   sleep 1
   freshclam
   echo -e "${blueColour}[*]${grayColour} Escaneando el sistema operativo"
-  clamscan -r /root/ -i --log=/var/log/clamav/scan.log
+  clamscan -r /home/wilcox/Desktop/ -i --log=/var/log/clamav/scan.log
 
 }
 
