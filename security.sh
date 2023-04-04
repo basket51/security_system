@@ -41,10 +41,10 @@ function security(){
   echo -e "\n${blueColour}[*]${grayColour} Instalando el antivirus clamav\n"
   sleep 1
   apt install clamav 2>/dev/null
-  echo -e "${blueColour}[*]${grayColour} Actualizando las definiciones de virus de ClamAV"
+  echo -e "\n${blueColour}[*]${grayColour} Actualizando las definiciones de virus de ClamAV\n"
   sleep 1
   freshclam
-  echo -e "${blueColour}[*]${grayColour} Escaneando el sistema operativo"
+  echo -e "\n${blueColour}[*]${grayColour} Escaneando el sistema operativo\n"
   clamscan -r /home/wilcox/Desktop/ -i --log=/var/log/clamav/scan.log
 
 }
@@ -65,4 +65,3 @@ if [ $(id -u) == "0" ]; then
 else
 	echo -e "${redColour}[!]${endColour}${grayColour}NO tienes suficientes privilegios${endColour}"
 fi
-
