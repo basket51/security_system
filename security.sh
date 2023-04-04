@@ -19,9 +19,7 @@ function ctrl_c(){
 }
 
 function helpPanel(){
-	echo -e "\n${yellowColour}[*]${endColour}${grayColour} Uso: ./security.sh -u <username> -p <password>${endColour}\n"
-	echo -e "${purpleColour}u) ${endColour}${yellowColour}Introduce tu username${endColour}"
-	echo -e "${purpleColour}p) ${endColour}${yellowColour}Introduce una password${endColour}"
+	echo -e "\n${yellowColour}[*]${endColour}${grayColour} Uso: ./security.sh ${endColour}\n"
 	echo -e "${purpleColour}h) ${endColour}${yellowColour}Mostrar este panel de ayuda${endColour}\n"
 }
 function security(){
