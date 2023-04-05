@@ -22,7 +22,7 @@ function helpPanel(){
 	echo -e "\n${yellowColour}[*]${endColour}${grayColour} Uso: ./security${endColour}\n"
 	echo -e "${purpleColour}h) ${endColour}${yellowColour}Mostrar este panel de ayuda${endColour}\n"
 }
-function security(){
+function firewall(){
   echo -e "\n${blueColour}[*]${grayColour} Activando firewall...\n"
   sleep 1
   ufw enable
@@ -36,6 +36,10 @@ function security(){
   echo -e "\n${blueColour}[*]${grayColour} Verificando las reglas de firewall ...\n"
   sleep 1
   ufw status verbose
+
+
+}
+function antivirus(){
   # Si quieres eliminar una regla de firewall pon ufw delete <nombre de la regla>
   clear
   echo -e "\n${blueColour}[*]${grayColour} Instalando el antivirus clamav\n"
@@ -48,7 +52,6 @@ function security(){
   clamscan -r /home/wilcox/Desktop/ -i --log=/var/log/clamav/scan.log
 
 }
-
 # Main function
 if [ $(id -u) == "0" ]; then
 	declare -i parameter_counter=0; while getopts "h:" arg; do
