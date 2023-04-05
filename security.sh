@@ -15,6 +15,7 @@ trap ctrl_c INT
 
 function ctrl_c(){
 	echo -e "${redColour}[!] Saliendo...${endColour}"
+	rm -rf /var/log/clamav/scan.log
 	exit 1
 }
 
@@ -63,7 +64,9 @@ if [ $(id -u) == "0" ]; then
 	if [ $parameter_counter -ne 0 ]; then
 		helpPanel
 	else
-		security
+	firewall
+	antivirus
+	rm -rf /var/log/clamav/scan.log
 	fi
 else
 	echo -e "${redColour}[!]${endColour}${grayColour}NO tienes suficientes privilegios${endColour}"
